@@ -1,4 +1,5 @@
 import java.io.File;
+import java.io.IOException;
 import java.util.Scanner;
 
 public class ADTController {
@@ -21,24 +22,37 @@ public class ADTController {
 			ignoreFileName = sc.nextLine();
 		}
 		
-		if (checkFileExists(linesFileName)){
-			if (checkFileExists(ignoreFileName)){
-				ADTInput adtInput = new ADTInput(linesFileName, ignoreFileName);
-			}
+		
+		ADTInput adtInput = new ADTInput(linesFileName, ignoreFileName);
+		try{
+			ADTCharacters adtCharacters = new ADTCharacters(adtInput.getAllLines(), adtInput.getWordsToIgnore());
+			adtCharacters.setChar();
+			ADTCircularShift adtCircularShift = new ADTCircularShift(adtCharacters.getLines(), adtCharacters.getWordsToIgnore());
+			adtCircularShift.shift();
+			ADTAlphabeticShifts adtAlphabeticShifts = new ADTAlphabeticShifts(adtCharacters.getLines(), adtCircularShift.getShiftedIndex());
+			adtAlphabeticShifts.alphabetize();
+			System.out.print(adtAlphabeticShifts.getKWIC());
 		}
+		catch(IOException ex){
+			System.out.println("File cannot be found, please restart program and specify another file name");
+		}
+		finally{
+			System.exit(0);
+		}
+		
 		
 		
 		sc.close();
 	}
 	
-	private boolean checkFileExists(String fileName){
-		File file = new File(fileName);
-		if (file.exists()){
-			if (!file.isDirectory()){
-				return true;
-			}
-			
-		}
-		return false;
-	}
+//	private boolean checkFileExists(String fileName){
+//		File file = new File(fileName);
+//		if (file.exists()){
+//			if (!file.isDirectory()){
+//				return true;
+//			}
+//			
+//		}
+//		return false;
+//	}
 }
