@@ -31,7 +31,8 @@ public class ADTController {
 			adtCircularShift.shift();
 			ADTAlphabeticShifts adtAlphabeticShifts = new ADTAlphabeticShifts(adtCharacters.getLines(), adtCircularShift.getShiftedIndex());
 			adtAlphabeticShifts.alphabetize();
-			System.out.print(adtAlphabeticShifts.getKWIC());
+			ADTOutput adtOutput = new ADTOutput(adtAlphabeticShifts.getKWIC());
+			adtOutput.print();
 		}
 		catch(IOException ex){
 			System.out.println("File cannot be found, please restart program and specify another file name");
@@ -44,7 +45,7 @@ public class ADTController {
 		
 		sc.close();
 	}
-	
+}
 //	private boolean checkFileExists(String fileName){
 //		File file = new File(fileName);
 //		if (file.exists()){
@@ -55,4 +56,3 @@ public class ADTController {
 //		}
 //		return false;
 //	}
-}

@@ -14,15 +14,15 @@ public class ADTInput {
 	}
 	
 	public List<String> getAllLines() throws IOException{
-		List<String> allLines = Files.readAllLines(Paths.get(lineFileName));
-		System.out.println(allLines);
+		List<String> allLines = Files.readAllLines(Paths.get(System.getProperty("user.dir") + "\\" + lineFileName));
+
 		return allLines;
 	}
 	
 	public List<String> getWordsToIgnore() throws IOException{
-		List<String> wordsToIgnore = Files.readAllLines(Paths.get(wordsToIgnoreFileName));
+		
+		List<String> wordsToIgnore = Files.readAllLines(Paths.get(System.getProperty("user.dir") + "\\" + wordsToIgnoreFileName));
 		
 		return wordsToIgnore;
 	}
-	
 }

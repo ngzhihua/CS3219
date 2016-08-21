@@ -34,5 +34,4 @@ public class ADTCircularShift {
 	public ArrayList<IntegerPair> getShiftedIndex(){
 		return this.shiftedIndex;
 	}
-	
 }

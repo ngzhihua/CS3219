@@ -32,7 +32,7 @@ public class ADTCharacters {
 	public List<String> getWordsToIgnore(){
 		return this.wordsToIgnore;
 	}
-	
+}
 	
 //	public int getNumOfLines(){
 //		return this.storage.size();
@@ -49,6 +49,3 @@ public class ADTCharacters {
 //	public String getWordToIgnore(int index){
 //		return this.wordsToIgnore.get(index);
 //	}
-	
-	
-}
