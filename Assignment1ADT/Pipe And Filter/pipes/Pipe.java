@@ -1,46 +1,28 @@
 package pipes;
 
-import java.io.EOFException;
-import java.util.ArrayList;
+import java.util.LinkedList;
+import java.util.List;
 
 public class Pipe {
-	private ArrayList<String> data;
-	private boolean isClosed;
+	private List<String> wordList;
+	private List<String> ignoreWord;
 
 	public Pipe(){
-		System.out.println("pipe created");
-		data = new ArrayList<String>();
-		isClosed = false;
+		wordList = new LinkedList<String>();
+		ignoreWord = new LinkedList<String>();
 	}
 
-	public void write(String s){
-		if(isClosed){
-			return;
-		}
-		else{
-			data.add(s);
-		}
+	public void writeWordList(List<String> input){
+		wordList=input;
 	}
-
-	public String read() throws EOFException {
-		while(true){
-			if(data.isEmpty()){
-				if(isClosed){
-					throw new EOFException();
-				}
-				try{
-					Thread.sleep(10);
-				}catch (InterruptedException e){
-					System.out.println("The thread is interrupted");
-				}
-			}
-			else{
-				return data.remove(0);
-			}
-		}
+	public List<String> readWordList() {
+		return wordList;
 	}
 	
-	public void close(){
-		isClosed = true;
+	public void writeIgnoreWord(List<String> ignoreWordList){
+		ignoreWord=ignoreWordList;
+	}
+	public List<String> readIgnoreWord(){
+		return ignoreWord;
 	}
 }
