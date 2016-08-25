@@ -23,11 +23,13 @@ public class Controller {
 			if (architectureNumber == 1){
 				ADTController adtController = new ADTController();
 				adtController.run();
+				break;
 			}
 			else if (architectureNumber == 2){
 				//Call pipe and filter
 				Filter[] filters={new Pump(), new CircularShift(), new IgnoreWordRemoval(),new AlphabeticalSort(),new Sink()};			
 				(new FilterWrapper(filters)).run();
+				break;
 			}
 			else{
 				System.out.println("Invalid Selection, please try again.\n");
