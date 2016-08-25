@@ -29,7 +29,7 @@ public class ADTController {
 			adtCharacters.setChar();
 			ADTCircularShift adtCircularShift = new ADTCircularShift(adtCharacters.getLines(), adtCharacters.getWordsToIgnore());
 			adtCircularShift.shift();
-			ADTAlphabeticShifts adtAlphabeticShifts = new ADTAlphabeticShifts(adtCharacters.getLines(), adtCircularShift.getShiftedIndex());
+			ADTAlphabeticShifts adtAlphabeticShifts = new ADTAlphabeticShifts(adtCharacters.getLines(), adtCircularShift.getShiftedIndex(), adtCharacters.getWordsToIgnore());
 			adtAlphabeticShifts.alphabetize();
 			ADTOutput adtOutput = new ADTOutput(adtAlphabeticShifts.getKWIC());
 			adtOutput.print();

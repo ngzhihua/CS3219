@@ -1,7 +1,7 @@
 import java.util.ArrayList;
 import java.util.List;
 
-public class ADTCircularShift {
+public class ADTCircularShift implements ADTCircularShiftInterface{
 	private ArrayList<ArrayList<String>> lines;
 	private List<String> wordsToIgnore;
 	private ArrayList<IntegerPair> shiftedIndex = new ArrayList<IntegerPair>();

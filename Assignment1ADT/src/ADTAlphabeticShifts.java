@@ -1,19 +1,37 @@
 import java.util.ArrayList;
 import java.util.Collections;
+import java.util.List;
 
-public class ADTAlphabeticShifts {
+public class ADTAlphabeticShifts implements ADTAlphabeticShiftsInterface{
 	
 	private ArrayList<ArrayList<String>> lines;
 	private ArrayList<IntegerPair> shiftedIndex;
+	private List<String> wordsToIgnore;
 	private ArrayList<String> kwic;
 	
-	public ADTAlphabeticShifts(ArrayList<ArrayList<String>> lines, ArrayList<IntegerPair> shiftedIndex){
+	public ADTAlphabeticShifts(ArrayList<ArrayList<String>> lines, ArrayList<IntegerPair> shiftedIndex, List<String> wordsToIgnore){
 		this.lines = lines;
 		this.shiftedIndex = shiftedIndex;
+		this.wordsToIgnore = wordsToIgnore;
+	}
+	
+	// This function converts words to ignore in lines to lower case
+	private void convertWordsToIgnoreToLower(){
+		for (int i = 0; i < lines.size(); i++){
+			for (int j = 0; j < lines.get(i).size(); j++){
+				for (int k = 0; k < wordsToIgnore.size(); k++){
+					if (lines.get(i).get(j).toLowerCase().equals(wordsToIgnore.get(k).toLowerCase())){
+						String lowerCaseWordToIgnore = lines.get(i).remove(j).toLowerCase();
+						lines.get(i).add(j, lowerCaseWordToIgnore);
+					}
+				}
+			}
+		}
 	}
 	
 	//This function converts shifted indices into words, sort them alphabetically and capitalizes the first character
 	public void alphabetize(){
+		convertWordsToIgnoreToLower();
 		ArrayList<String> kwic = new ArrayList<String>();
 		
 		for (IntegerPair index: shiftedIndex){

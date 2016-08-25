@@ -33,19 +33,3 @@ public class ADTCharacters {
 		return this.wordsToIgnore;
 	}
 }
-	
-//	public int getNumOfLines(){
-//		return this.storage.size();
-//	}
-//	
-//	public int getNumOfWords(int index){
-//		return this.storage.get(index).size();
-//	}
-//
-//	public int getNumOfWordsToIgnore(){
-//		return this.wordsToIgnore.size();
-//	}
-//	
-//	public String getWordToIgnore(int index){
-//		return this.wordsToIgnore.get(index);
-//	}
