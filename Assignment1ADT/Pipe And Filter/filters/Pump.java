@@ -36,7 +36,7 @@ public class Pump extends Filter {
 			writeWord(inputWordlist);
 			writeIgnoreWord(ignoreWordlist);
 
-		}catch(Exception e){
+		}catch(IOException e ){
 			System.out.println("error reading input");
 		}
 	}
