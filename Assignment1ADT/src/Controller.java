@@ -13,6 +13,7 @@ public class Controller {
 			System.out.println("Please select from the following architectures (Enter their number):");
 			System.out.println("1. Abstract Data Type");
 			System.out.println("2. Pipes and Filters");
+			System.out.println("3. Exit");
 
 			Scanner sc = new Scanner(System.in);
 			Integer architectureNumber = 0;
@@ -28,6 +29,9 @@ public class Controller {
 				//Call pipe and filter
 				Filter[] filters={new Pump(), new CircularShift(), new IgnoreWordRemoval(),new AlphabeticalSort(),new Sink()};			
 				(new FilterWrapper(filters)).run();
+			}
+			else if (architectureNumber == 3){
+				System.exit(0);
 			}
 			else{
 				System.out.println("Invalid Selection, please try again.\n");
