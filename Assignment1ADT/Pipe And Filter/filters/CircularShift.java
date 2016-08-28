@@ -2,7 +2,9 @@ package filters;
 
 import java.util.LinkedList;
 import java.util.List;
-
+/*
+Author: Duan Xuzhou
+The CircularShift perform circular shifting for each input line*/
 public class CircularShift extends Filter{
 
 	@Override

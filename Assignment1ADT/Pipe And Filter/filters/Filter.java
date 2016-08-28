@@ -1,9 +1,9 @@
 package filters;
 
 import java.util.List;
-
 import pipes.Pipe;
-
+/*
+Author: Duan Xuzhou*/
 public abstract class Filter implements Runnable{
 	protected Pipe in, out;
 

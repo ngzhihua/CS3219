@@ -13,11 +13,11 @@ public class ADTController {
 		String linesFileName = "";
 		String ignoreFileName = "";
 		Scanner sc = new Scanner(System.in);
-		System.out.println("Please enter the file name for Lines: ");
+		System.out.println("Please enter the file name for input lines: ");
 		if (sc.hasNext()){
 			linesFileName = sc.nextLine();
 		}
-		System.out.println("Please enter the file name for Words to Ignore: ");
+		System.out.println("Please enter the file name for words to Ignore: ");
 		if (sc.hasNext()){
 			ignoreFileName = sc.nextLine();
 		}
