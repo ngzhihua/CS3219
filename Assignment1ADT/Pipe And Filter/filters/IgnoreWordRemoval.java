@@ -2,7 +2,9 @@ package filters;
 
 import java.util.LinkedList;
 import java.util.List;
-
+/*
+Author: Duan Xuzhou
+This Filter matches the circular shifts with the ignore wordlist and removes it if there is a match*/
 public class IgnoreWordRemoval extends Filter{
 	
 	@Override

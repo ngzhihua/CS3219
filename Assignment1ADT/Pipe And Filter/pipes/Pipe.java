@@ -3,6 +3,8 @@ package pipes;
 import java.util.LinkedList;
 import java.util.List;
 
+/*Author: Duan Xuzhou
+*/
 public class Pipe {
 	private List<String> wordList;
 	private List<String> ignoreWord;

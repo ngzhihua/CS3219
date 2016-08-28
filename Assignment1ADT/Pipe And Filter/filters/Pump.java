@@ -5,6 +5,10 @@ import java.nio.file.Paths;
 import java.util.List;
 import java.util.Scanner;
 
+/*
+Author: Duan Xuzhou
+The pump takes in input from the user and format it into the data structure specified in the architecture design
+*/
 public class Pump extends Filter {
 	private Scanner sc;
 	private String linesFileName,ignoreFileName;
@@ -18,15 +22,7 @@ public class Pump extends Filter {
 	@Override
 	public void run(){
 		try{
-			System.out.println("Welcome to the KWIC");
-			System.out.println("Please enter the file name for Lines: ");
-			if (sc.hasNext()){
-				linesFileName = sc.nextLine();
-			}
-			System.out.println("Please enter the file name for Words to Ignore: ");
-			if (sc.hasNext()){
-				ignoreFileName = sc.nextLine();
-			}
+			readInput();
 			List<String> inputWordlist= getAllWordlist();
 			List<String> ignoreWordlist= getAllIgnoreWordlist();
 
@@ -37,7 +33,19 @@ public class Pump extends Filter {
 			writeIgnoreWord(ignoreWordlist);
 
 		}catch(IOException e ){
-			System.out.println("error reading input");
+			System.out.println("File cannot be found, please try again.");
+			run();
+		}
+	}
+
+	private void readInput() {
+		System.out.println("Please enter the file name for input lines: ");
+		if (sc.hasNext()){
+			linesFileName = sc.nextLine();
+		}
+		System.out.println("Please enter the file name for words to ignore: ");
+		if (sc.hasNext()){
+			ignoreFileName = sc.nextLine();
 		}
 	}
 

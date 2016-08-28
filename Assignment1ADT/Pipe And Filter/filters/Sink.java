@@ -4,6 +4,10 @@ import java.io.IOException;
 import java.io.PrintWriter;
 import java.util.List;
 
+/*
+* Author: Duan Xuzhou
+*The sink display the output and write to file
+*/
 public class Sink extends Filter{
 
 	@Override
