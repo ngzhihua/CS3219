@@ -1,3 +1,9 @@
+/**
+ * 
+ * @author Ng Zhi Hua
+ *
+ */
+
 import java.io.File;
 import java.io.IOException;
 import java.util.Scanner;
@@ -35,24 +41,10 @@ public class ADTController {
 			adtOutput.print();
 		}
 		catch(IOException ex){
-			System.out.println("File cannot be found, please restart program and specify another file name");
+			System.out.println("File cannot be found, please try again.");
+			run();
 		}
-		finally{
-			System.exit(0);
-		}
-		
-		
 		
 		sc.close();
 	}
 }
-//	private boolean checkFileExists(String fileName){
-//		File file = new File(fileName);
-//		if (file.exists()){
-//			if (!file.isDirectory()){
-//				return true;
-//			}
-//			
-//		}
-//		return false;
-//	}

@@ -1,4 +1,8 @@
-
+/**
+ * 
+ * @author Ng Zhi Hua
+ *
+ */
 public class IntegerPair {
 	Integer x;
 	Integer y;
